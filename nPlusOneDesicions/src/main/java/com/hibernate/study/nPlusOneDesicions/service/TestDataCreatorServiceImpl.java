@@ -8,6 +8,7 @@ import com.hibernate.study.nPlusOneDesicions.entity.Product;
 import com.hibernate.study.nPlusOneDesicions.entity.Style;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,7 @@ public class TestDataCreatorServiceImpl implements TestDataCreatorService {
     private ProductItemDao productItemDao;
 
     @Override
+    @Transactional
     public void createTestData() {
         createProduct("prod1", 2l);
         createProduct("prod2", 2l);
@@ -30,6 +32,7 @@ public class TestDataCreatorServiceImpl implements TestDataCreatorService {
         createProduct("prod1", 3l);
 
         Style style = new Style("tt1");
+        styleDao.save(style);
 
         Product product1 = new Product("prod5", style);
         Product product2 = new Product("prod6", style);
@@ -37,9 +40,8 @@ public class TestDataCreatorServiceImpl implements TestDataCreatorService {
         productDao.save(product1);
         productDao.save(product2);
 
-        style.setProducts(Lists.newArrayList(product1, product2));
+        //style.setProducts(Lists.newArrayList(product1, product2));
 
-        styleDao.save(style);
     }
 
     private Product createProduct(String name, Long styleId) {

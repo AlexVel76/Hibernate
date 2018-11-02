@@ -14,7 +14,7 @@ public class Product extends AbstractEntity {
     @JoinColumn(name = "style_id", referencedColumnName = "id")
     private Style style;
 
-    @OneToMany
+    @OneToMany(mappedBy = "product")
     private List<ProductItem> productItems;
 
     public Product(String name, Style style) {

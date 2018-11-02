@@ -1,5 +1,6 @@
 package com.hibernate.study.nPlusOneDesicions.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.List;
@@ -9,7 +10,7 @@ public class Style extends AbstractEntity {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "style")
     private List<Product> products;
 
     public Style() {
