@@ -30,6 +30,8 @@ public class TestDataCreatorServiceImpl implements TestDataCreatorService {
         createProduct("prod3", 2l);
         createProduct("prod4", 2l);
         createProduct("prod1", 3l);
+        createProduct("prod1", 4l);
+        createProduct("prod1", 5l);
 
         Style style = new Style("tt1");
         styleDao.save(style);
@@ -39,8 +41,6 @@ public class TestDataCreatorServiceImpl implements TestDataCreatorService {
 
         productDao.save(product1);
         productDao.save(product2);
-
-        //style.setProducts(Lists.newArrayList(product1, product2));
 
     }
 

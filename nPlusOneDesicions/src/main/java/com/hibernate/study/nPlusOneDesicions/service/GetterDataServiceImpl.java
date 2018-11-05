@@ -24,8 +24,16 @@ public class GetterDataServiceImpl implements GetterDataService {
     @Override
     @Transactional
     public void loadTestData() {
-        Style style = styleDao.findById(2l).get();
-        List<Product> products = style.getProducts();
-        products.stream().forEach(p -> System.out.println(p.getName()));
+        List<Product> products;
+        System.out.println("--------------1--------------");
+//        Style style = styleDao.findById(2l).get();
+//        products = style.getProducts();
+//        products.stream().forEach(p -> System.out.println(p.getName()));
+
+        System.out.println("--------------2--------------");
+        products = productDao.findByStyleName("stylename");
+        products.stream().forEach(p -> {
+            System.out.println(p.getName() + " : " + p.getStyle().getName());
+        });
     }
 }
