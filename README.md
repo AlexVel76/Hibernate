@@ -13,7 +13,7 @@ Hibernate: insert into style (id, name) values (6, 'Small') <br>
 Hibernate: update hibernate_sequence set next_val= 7 <br>
  <br>
 
---------------2-------------- <br>
+-------------- N+1 issue -------------- <br>
 Hibernate: select product0_.id as id1_0_, product0_.name as name2_0_, product0_.style_id as style_id3_0_ from product product0_ <br>
 Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=? <br>
 Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=? <br>
@@ -29,7 +29,7 @@ prod1 : White <br>
 prod1 : Big <br>
 prod5 : tt1 <br>
 prod6 : tt1 <br>
---------------3--------------(in same transaction) <br>
+--------------3--------------(Same query and configuratioin od reltion but call the same records in SAME Transaction) <br>
 Hibernate: select product0_.id as id1_0_, product0_.name as name2_0_, product0_.style_id as style_id3_0_ from product product0_ <br>
 prod1 : GREEN <br>
 prod2 : GREEN <br>
@@ -40,7 +40,7 @@ prod1 : White <br>
 prod1 : Big <br>
 prod5 : tt1 <br>
 prod6 : tt1 <br>
---------------4--------------in NEW transaction <br>
+--------------4--------------But if we call products and styles in a NEW transaction we hit the N+1 againe <br>
 Hibernate: select product0_.id as id1_0_, product0_.name as name2_0_, product0_.style_id as style_id3_0_ from product product0_ <br>
 Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=? <br>
 Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=? <br>
