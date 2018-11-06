@@ -29,7 +29,7 @@ prod1 : White <br>
 prod1 : Big <br>
 prod5 : tt1 <br>
 prod6 : tt1 <br>
---------------3--------------(Same query and configuratioin od reltion but call the same records in SAME Transaction) <br>
+--------------3--------------(Same query and configuratioin of relation but call the same records in SAME Transaction) <br>
 Hibernate: select product0_.id as id1_0_, product0_.name as name2_0_, product0_.style_id as style_id3_0_ from product product0_ <br>
 prod1 : GREEN <br>
 prod2 : GREEN <br>
