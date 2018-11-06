@@ -1,0 +1,113 @@
+Hibernate: insert into style (id, name) values (1, 'RED')
+Hibernate: insert into style (id, name) values (2, 'GREEN')
+Hibernate: insert into style (id, name) values (3, 'Blue')
+Hibernate: insert into style (id, name) values (4, 'White')
+Hibernate: insert into style (id, name) values (5, 'Big')
+Hibernate: insert into style (id, name) values (6, 'Small')
+Hibernate: update hibernate_sequence set next_val= 7
+2018-11-06 13:20:14.236  INFO 15236 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-06 13:20:14.484  INFO 15236 --- [           main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-11-06 13:20:14.933  INFO 15236 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-11-06 13:20:14.934  INFO 15236 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-11-06 13:20:14.937  INFO 15236 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-11-06 13:20:14.946  INFO 15236 --- [           main] c.h.s.n.NPlusOneDesicionsApplication     : Started NPlusOneDesicionsApplication in 3.067 seconds (JVM running for 6.166)
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: insert into product (name, style_id, id) values (?, ?, ?)
+Hibernate: insert into product (name, style_id, id) values (?, ?, ?)
+Hibernate: insert into product (name, style_id, id) values (?, ?, ?)
+Hibernate: insert into product (name, style_id, id) values (?, ?, ?)
+Hibernate: insert into product (name, style_id, id) values (?, ?, ?)
+Hibernate: insert into product (name, style_id, id) values (?, ?, ?)
+Hibernate: insert into product (name, style_id, id) values (?, ?, ?)
+Hibernate: insert into style (name, id) values (?, ?)
+Hibernate: insert into product (name, style_id, id) values (?, ?, ?)
+Hibernate: insert into product (name, style_id, id) values (?, ?, ?)
+--------------1--------------
+--------------2--------------
+Hibernate: select product0_.id as id1_0_, product0_.name as name2_0_, product0_.style_id as style_id3_0_ from product product0_
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+prod1 : GREEN
+prod2 : GREEN
+prod3 : GREEN
+prod4 : GREEN
+prod1 : Blue
+prod1 : White
+prod1 : Big
+prod5 : tt1
+prod6 : tt1
+--------------3--------------(in same transaction)
+Hibernate: select product0_.id as id1_0_, product0_.name as name2_0_, product0_.style_id as style_id3_0_ from product product0_
+prod1 : GREEN
+prod2 : GREEN
+prod3 : GREEN
+prod4 : GREEN
+prod1 : Blue
+prod1 : White
+prod1 : Big
+prod5 : tt1
+prod6 : tt1
+--------------4--------------in NEW transaction
+Hibernate: select product0_.id as id1_0_, product0_.name as name2_0_, product0_.style_id as style_id3_0_ from product product0_
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=?
+prod1 : GREEN
+prod2 : GREEN
+prod3 : GREEN
+prod4 : GREEN
+prod1 : Blue
+prod1 : White
+prod1 : Big
+prod5 : tt1
+prod6 : tt1
+--------------5--------------(without wrapped transaction AND use JOIN FETCH)
+Hibernate: select distinct product0_.id as id1_0_0_, style1_.id as id1_2_1_, product0_.name as name2_0_0_, product0_.style_id as style_id3_0_0_, style1_.name as name2_2_1_ from product product0_ inner join style style1_ on product0_.style_id=style1_.id
+prod1 : GREEN
+prod2 : GREEN
+prod3 : GREEN
+prod4 : GREEN
+prod1 : Blue
+prod1 : White
+prod1 : Big
+prod5 : tt1
+prod6 : tt1
+--------------6--------------without wrapped transaction AND use Dynamic Entity Graph
+Hibernate: select distinct product0_.id as id1_0_0_, style1_.id as id1_2_1_, product0_.name as name2_0_0_, product0_.style_id as style_id3_0_0_, style1_.name as name2_2_1_ from product product0_ left outer join style style1_ on product0_.style_id=style1_.id
+prod1 : GREEN
+prod2 : GREEN
+prod3 : GREEN
+prod4 : GREEN
+prod1 : Blue
+prod1 : White
+prod1 : Big
+prod5 : tt1
+prod6 : tt1
