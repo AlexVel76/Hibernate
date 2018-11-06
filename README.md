@@ -12,41 +12,7 @@ Hibernate: insert into style (id, name) values (5, 'Big') <br>
 Hibernate: insert into style (id, name) values (6, 'Small') <br>
 Hibernate: update hibernate_sequence set next_val= 7 <br>
  <br>
-Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=? <br>
-Hibernate: select next_val as id_val from hibernate_sequence for update <br>
-Hibernate: update hibernate_sequence set next_val= ? where next_val=? <br>
-Hibernate: select next_val as id_val from hibernate_sequence for update <br>
-Hibernate: update hibernate_sequence set next_val= ? where next_val=? <br>
-Hibernate: select next_val as id_val from hibernate_sequence for update <br>
-Hibernate: update hibernate_sequence set next_val= ? where next_val=? <br>
-Hibernate: select next_val as id_val from hibernate_sequence for update <br>
-Hibernate: update hibernate_sequence set next_val= ? where next_val=? <br>
-Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=? <br>
-Hibernate: select next_val as id_val from hibernate_sequence for update <br>
-Hibernate: update hibernate_sequence set next_val= ? where next_val=? <br>
-Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=? <br>
-Hibernate: select next_val as id_val from hibernate_sequence for update <br>
-Hibernate: update hibernate_sequence set next_val= ? where next_val=? <br>
-Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=? <br>
-Hibernate: select next_val as id_val from hibernate_sequence for update <br>
-Hibernate: update hibernate_sequence set next_val= ? where next_val=? <br>
-Hibernate: select next_val as id_val from hibernate_sequence for update <br>
-Hibernate: update hibernate_sequence set next_val= ? where next_val=? <br>
-Hibernate: select next_val as id_val from hibernate_sequence for update <br>
-Hibernate: update hibernate_sequence set next_val= ? where next_val=? <br>
-Hibernate: select next_val as id_val from hibernate_sequence for update <br>
-Hibernate: update hibernate_sequence set next_val= ? where next_val=? <br>
-Hibernate: insert into product (name, style_id, id) values (?, ?, ?) <br>
-Hibernate: insert into product (name, style_id, id) values (?, ?, ?) <br>
-Hibernate: insert into product (name, style_id, id) values (?, ?, ?) <br>
-Hibernate: insert into product (name, style_id, id) values (?, ?, ?) <br>
-Hibernate: insert into product (name, style_id, id) values (?, ?, ?) <br>
-Hibernate: insert into product (name, style_id, id) values (?, ?, ?) <br>
-Hibernate: insert into product (name, style_id, id) values (?, ?, ?) <br>
-Hibernate: insert into style (name, id) values (?, ?) <br>
-Hibernate: insert into product (name, style_id, id) values (?, ?, ?) <br>
-Hibernate: insert into product (name, style_id, id) values (?, ?, ?) <br>
---------------1-------------- <br>
+
 --------------2-------------- <br>
 Hibernate: select product0_.id as id1_0_, product0_.name as name2_0_, product0_.style_id as style_id3_0_ from product product0_ <br>
 Hibernate: select style0_.id as id1_2_0_, style0_.name as name2_2_0_ from style style0_ where style0_.id=? <br>
